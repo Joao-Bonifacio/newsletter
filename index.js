@@ -11,10 +11,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
 app.get('/', (req,res) => {
-    if (req.query.busca == null) {
+    if (req.query.seach == null) {
         res.render('index')
     }else{
-        res.send('Você pesquisou: '+req.query.busca) //futuramente buscar no banco de dados
+        res.send('Você pesquisou: '+req.query.search) //futuramente buscar no banco de dados
     }
 })
 app.get('/:slug', (req,res) => {
