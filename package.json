@@ -1,0 +1,20 @@
+{
+  "name": "newsletter",
+  "version": "1.0.0",
+  "description": "pagina de noticias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "noticias",
+    "newsletter"
+  ],
+  "author": "João Bonifácio",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "path": "^0.12.7"
+  }
+}
