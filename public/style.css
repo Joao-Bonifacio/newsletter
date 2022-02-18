@@ -77,7 +77,7 @@ header h1{
 .main_new{
     position: relative;
     margin: auto;
-    width: 980px;
+    width: 65%;
     border-radius: 12px;
 }
 .main_new > img{
@@ -88,9 +88,10 @@ header h1{
     position: absolute;
     text-align: justify;
     bottom: 0;
-    padding: 15px;
+    padding: 10px 20px;
     color: white;
     z-index: 2;
+    max-width: 500px;
 }
 .filter{
     position: absolute;
