@@ -4,6 +4,7 @@
 .now{
     border-bottom: 3px solid #6F92AB;
     background-color: #27333b;
+    transition: 1.5s;
 }
 html,body{
     margin: 0;
@@ -204,6 +205,24 @@ header > div{
     background-color: #1b2241;
     height: 100px;
     margin-bottom: 5px;
+}
+/*footer*/
+.footer{
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+.footer h3{
+    text-align: center;
+}
+.footer > div{
+    width: 50%;
+}
+.footer a{
+    font-size: 30px;
+    padding: 5px;
+    padding-left: 15px;
+    color: #141930;
 }
 
 @media screen and (max-width: 1020px) {

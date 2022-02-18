@@ -13,7 +13,7 @@
     <h1 class="center"><span style="font-weight: lighter;color: white;">John</span>News</h1>
     <div class="flex head-content">
         <div class="pages">
-            <div class="now"><a href="/home">home</a></div>
+            <div><a href="/home">home</a></div>
             <div><a href="/category">categor</a>y</div>
             <div><a href="/today">today</a></div>
             <div><a href="/contact">contact</a></div>
@@ -22,3 +22,33 @@
         <div class="search"><i class="fas fa-search"></i><input type="text" placeholder="seach"></div>
     </div>
 </header>
+<script defer>
+    const pages = document.querySelectorAll('.pages > div')
+    var dir = location.pathname
+    switch (dir) {
+        case '/category':
+            pages[0].classList.remove('now')
+            pages[1].classList.add('now')
+            pages[2].classList.remove('now')
+            pages[3].classList.remove('now')
+            break
+        case '/today':
+            pages[0].classList.remove('now')
+            pages[1].classList.remove('now')
+            pages[2].classList.add('now')
+            pages[3].classList.remove('now')
+            break
+        case '/contact':
+            pages[0].classList.remove('now')
+            pages[1].classList.remove('now')
+            pages[2].classList.remove('now')
+            pages[3].classList.add('now')
+            break
+        default:
+            pages[0].classList.add('now')
+            pages[1].classList.remove('now')
+            pages[2].classList.remove('now')
+            pages[3].classList.remove('now')
+            break;
+    }
+</script>
