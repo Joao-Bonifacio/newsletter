@@ -28,6 +28,10 @@ header{
     color: #90BDDE;
     box-shadow: #31404B;
 }
+header a{
+    text-decoration: none;
+    color: #90BDDE;
+}
 header h1{
     background-color: #445561;
     padding: 12px;
