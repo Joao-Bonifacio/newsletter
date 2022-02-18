@@ -72,12 +72,14 @@ header > div{
     padding-top: 6px;
 }
 /*...header*/
+
 /*body...*/
-.title_hot{
+.title_hot > h2{
     color: #90BDDE;
     background-color: #445561;
     margin: 10px auto;
     padding: 20px;
+    text-align: center;
 }
 
 .main_new{
@@ -111,7 +113,8 @@ header > div{
     background-color: #355063;
 }
 .more>div{
-    margin: 0 auto;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .more-title{
     color: #90BDDE;
@@ -121,36 +124,50 @@ header > div{
     padding: 20px;
 }
 .more-container{
-    width: 90%;
+    width: 80%;
+    transform: translateX(7%);
 }
 .last{
-    margin: 10px 3px;
-    width: 70%;
+    margin: 15px 0;
+    width: 30%;
+    flex: 1;
+}
+.last-single{
+    width: 33%;
+    min-width: 200px;
+    margin-left: 20px;
+    background-color: #1b2241;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 .last-single > img{
+    width: 100%;
     border-radius: 5px 5px 0 0;
 }
-.last-single > p{
-    text-align: justify;
-    max-width: 62%;
-    color: white;
+.last-single h3{
+    font-size: 15px;
 }
-.last-single h2,h3{
-    max-width: 62%;
+.last-single > p,h2,h3{
+    text-align: justify;
+    color: white;
+    padding: 5px 15px;
 }
 .last div{
     flex: auto;
 }
 .top{
-    margin: 10px 3px;
-    width: 35%;
+    width: 38%;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+.top > div{
+    display: inline-block;
 }
 .top > h3{
-    text-align: center;
     padding: 5px;
     background-color: #5a50e3;
     border-radius: 10px  10px 0 0;
 }
 /*...body*/
-.flex{display: flex;}
+.flex{display: flex;flex-wrap: wrap;}
 .center{text-align: center;}
