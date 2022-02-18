@@ -178,7 +178,7 @@ header > div{
     margin-top: 15px;
     position: relative;
 }
-.top img{
+.small{
     display: inline-block;
     width: 100px;
     margin: 0;
@@ -187,10 +187,10 @@ header > div{
     position: absolute;
     display: inline-block;
     margin: 0;
-    padding: 10px;
+    padding: 10px !important;
     text-align: justify;
     color: white;
-    font-size: 20px;
+    font-size: 13px;
 }
 .top > h3{
     padding: 5px;
@@ -225,6 +225,39 @@ header > div{
     color: #141930;
 }
 
+/*paginas de noticias*/
+.new{
+    background-color: #4c5a64;
+    color: white;
+    margin-bottom: 0;
+}
+.new p{
+    padding: 20px 40px;
+    text-align: justify;
+    margin: 0;
+}
+.new h3{
+    padding: 10px 50px;
+}
+.new-single > h2{
+    padding: 45px 0;
+    color: #90BDDE;
+}
+.author{
+    text-align: end;
+    padding-right: 50px;
+}
+.new-single{
+    width: 60%;
+    padding-bottom: 50px;
+}
+.top-single{
+    width: 30%;
+}
+.new-img, .new-img img{
+    width: 360px;
+    margin: 5px auto;
+}
 @media screen and (max-width: 1020px) {
     .last{
         width: 50%;

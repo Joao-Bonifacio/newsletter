@@ -20,7 +20,7 @@ app.get('/', (req,res) => {
     }
 })
 app.get('/:slug', (req,res) => {
-    res.send(req.params.slug)
+    res.render('single',{})
 })
 
 app.listen(3000,() => {
