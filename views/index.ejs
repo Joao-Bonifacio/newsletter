@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +8,56 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
     <title>NewsLetter</title>
 </head>
-<body>
-    <header>
-        <!--adicionar menu, titulo e signin-->
-        <div>
-            <h1><span style="font-weight: lighter;">John</span>News</h1>
-            <div class="flex head-content">
-                <div class="pages flex">
-                    <div style="border-bottom: 3px solid #6F92AB;">home</div>
-                    <div>category</div>
-                    <div>home</div>
-                    <div>contact</div>
-                </div>
-                <div class="search"><i class="fas fa-search"></i><input type="text" placeholder="seach"></div>
+<header>
+    <div>
+        <h1 class="center"><span style="font-weight: lighter;color: white;">John</span>News</h1>
+        <div class="flex head-content">
+            <div class="pages flex">
+                <div style="border-bottom: 3px solid #6F92AB;background-color: #27333b;">home</div>
+                <div>category</div>
+                <div>home</div>
+                <div>contact</div>
             </div>
+            <div class="search"><i class="fas fa-search"></i><input type="text" placeholder="seach"></div>
         </div>
-    </header>
-
-    <section class="hot_news">
-        <div class="title_hot"><h2>Hot News</h2></div>
+    </div>
+</header>
+<body>
+    <main class="hot_news">
+        <div class="title_hot center"><h2>Hot News</h2></div>
         <div class="main_new">
             <div class="filter"></div>
             <div class="description">
-                <h2>O paradoxo criado pelo eren</h2>
+                <h2>The paradox created by eren</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro reiciendis pariatur eius assumenda consequuntur sit, non est aliquid. Animi beatae dolore magnam debitis maiores quae quia error itaque asperiores eos.</p>
             </div>
             <img src="/public/img/eren.jpg" alt="eren">
+        </div>
+    </main>
+    <section class="more">
+        <h1 class="center more-title">More News</h1>
+        <div class="more-container flex">
+            <div class="last flex">
+                <div class="last-single">
+                    <img src="/public/img/lulavsbolsonaro.jfif" alt="lula vs bolsonaro">
+                    <h3>Polytic</h3>
+                    <h2>Bolsonaro and Lula vie for first place</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste quasi optio eos? Fugiat libero aperiam eaque a dicta ad! Porro.</p>
+                </div>
+                <div class="last-single">
+                    <img src="/public/img/lulavsbolsonaro.jfif" alt="lula vs bolsonaro">
+                    <h3>Category</h3>
+                    <h2>Description</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste quasi optio eos? Fugiat libero aperiam eaque a dicta ad! Porro.</p>
+                </div>
+            </div>
+            <div class="top">
+                <h3>More read</h3>
+                <div>grgr</div>
+                <div>vevev</div>
+                <div>dwdwd</div>
+                <div>wdwd</div>
+            </div>
         </div>
     </section>
 </body>
