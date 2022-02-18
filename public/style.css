@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap');
+.flex{display: flex;flex-wrap: wrap;}
+.center{text-align: center;}
+.now{
+    border-bottom: 3px solid #6F92AB;
+    background-color: #27333b;
+}
 html,body{
     margin: 0;
     padding: 0;
@@ -7,11 +13,13 @@ html,body{
     font-family: 'Roboto', sans-serif;
     max-width: 2000px;
     overflow: auto;
+    overflow-x: hidden;
 }
 h1,h2,h3{
     color: #90BDDE;
     margin: 0;
 }
+
 /*header...*/
 header{
     height: 110px;
@@ -31,29 +39,36 @@ header > div{
     height: 49px;
 }
 .pages{
+    display: flex;
     font-size: 20px;
-    width: 50%;
-    flex: 1;
+    width: 70%;
 }
 .pages > div{
     padding: 5px 30px;
     bottom: 2px;
     padding-top: 10px;
 }
+.mobile{
+    font-size: 26px;
+    padding: 9px;
+    cursor: pointer;
+    display: none;
+}
 .search{
-    width: 50%;
+    width: 30%;
     text-align: end;
     flex: 2;
     padding-top: 10px;
+    padding-right: 22px;
 }
 .search input{
     position: relative;
     background-color: #445561;
-    margin-right: 30px;
+    padding-right: 20px;
     padding: 4px;
     padding-left: 22px;
     border-radius: 12px;
-    width: 120px;
+    width: 110px;
     z-index: 1;
     color: white;
 }
@@ -71,7 +86,6 @@ header > div{
     padding-left: 5px;
     padding-top: 6px;
 }
-/*...header*/
 
 /*body...*/
 .title_hot > h2{
@@ -81,7 +95,6 @@ header > div{
     padding: 20px;
     text-align: center;
 }
-
 .main_new{
     position: relative;
     margin: auto;
@@ -129,16 +142,15 @@ header > div{
 }
 .last{
     margin: 15px 0;
-    width: 30%;
     flex: 1;
 }
 .last-single{
     width: 33%;
-    min-width: 200px;
     margin-left: 20px;
     background-color: #1b2241;
     border-radius: 5px;
     margin-bottom: 5px;
+    min-width: 250px;
 }
 .last-single > img{
     width: 100%;
@@ -159,6 +171,7 @@ header > div{
     width: 38%;
     margin-left: 25px;
     margin-top: 15px;
+    position: relative;
 }
 .top img{
     display: inline-block;
@@ -166,24 +179,58 @@ header > div{
     margin: 0;
 }
 .top p{
+    position: absolute;
     display: inline-block;
     margin: 0;
-    max-width: 300px;
     padding: 10px;
-    transform: translateY(-20px);
     text-align: justify;
     color: white;
+    font-size: 20px;
 }
 .top > h3{
     padding: 5px;
     background-color: #5a50e3;
     border-radius: 10px  10px 0 0;
 }
+.top-content{
+    width: 100%;
+    background-color: #21455E;
+}
 .top-content > div{
     background-color: #1b2241;
     height: 100px;
     margin-bottom: 5px;
 }
-/*...body*/
-.flex{display: flex;flex-wrap: wrap;}
-.center{text-align: center;}
+
+@media screen and (max-width: 1020px) {
+    .last{
+        width: 50%;
+        margin: 5px;
+    }
+    .top{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 775px) {
+    .more{
+        width: 99%;
+        margin: 0 auto;
+        margin: 5px;
+    }
+    .top{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .search{
+        width: 80%;
+        padding: 10px;
+        padding-right: 100px;
+        text-align: end;
+    }
+    .pages{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}
