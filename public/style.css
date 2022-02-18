@@ -13,7 +13,6 @@ header{
     width: 100%;
     background-color: #31404B;
     color: #90BDDE;
-    margin-bottom: 60px;
 }
 header h1{
     background-color: #445561;
@@ -65,12 +64,41 @@ header h1{
 }
 /*...header*/
 /*body...*/
-.main_new,img{
+.title_hot{
+    color: #90BDDE;
+    text-align: center;
+    background-color: #445561;
+    margin: 10px auto;
+    padding: 20px;
+}
+.title_hot h2{
+    margin: 0;
+}
+.main_new{
+    position: relative;
     margin: auto;
-    width: 600px;
+    width: 980px;
+    border-radius: 12px;
+}
+.main_new > img{
+    width: 100%;
+    border-radius: 12px;
 }
 .description{
+    position: absolute;
     text-align: justify;
+    bottom: 0;
+    padding: 15px;
+    color: white;
+    z-index: 2;
+}
+.filter{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 12px;
 }
 /*...body*/
 .flex{display: flex;}
