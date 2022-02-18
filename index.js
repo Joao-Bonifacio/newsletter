@@ -10,9 +10,12 @@ app.use('/public',express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
+//const tst = require('./script.js') //importando módulo
+
+
 app.get('/', (req,res) => {
     if (req.query.seach == null) {
-        res.render('index')
+        res.render('index',{tst})
     }else{
         res.send('Você pesquisou: '+req.query.search) //futuramente buscar no banco de dados
     }
