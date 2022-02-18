@@ -147,7 +147,7 @@ header > div{
 }
 .last{
     margin: 15px 0;
-    flex: 1;
+    width: 60%;
 }
 .last-single{
     width: 33%;
@@ -173,7 +173,7 @@ header > div{
     flex: auto;
 }
 .top{
-    width: 38%;
+    width: 35%;
     margin-left: 25px;
     margin-top: 15px;
     position: relative;
