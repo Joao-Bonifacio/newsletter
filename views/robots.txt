@@ -1,4 +1,2 @@
 # rascunho to_do list
-add marcador da página atual
-add pagina single da noticia
 add menu mobile
