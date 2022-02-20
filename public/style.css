@@ -20,6 +20,7 @@ h1,h2,h3{
     color: #90BDDE;
     margin: 0;
 }
+a{text-decoration: none}
 
 /*header...*/
 header{
@@ -142,8 +143,9 @@ header > div{
     padding: 20px;
 }
 .more-container{
+    display: flex;
     width: 80%;
-    transform: translateX(7%);
+    margin: 0 auto;
 }
 .last{
     margin: 15px 0;
@@ -258,24 +260,31 @@ header > div{
     width: 360px;
     margin: 5px auto;
 }
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1000px) {
     .last{
-        width: 50%;
-        margin: 5px;
+        width: 48%;
+        margin: 1%;
     }
     .top{
-        width: 50%;
+        width: 48%;
     }
 }
 @media screen and (max-width: 775px) {
-    .more{
-        width: 99%;
+    .more-container{
+        margin: 20px auto;
+        display: block;
+    }
+    .last{
+        width: 100%;
         margin: 0 auto;
-        margin: 5px;
+    }
+    .last-single{
+        width: 100%;
     }
     .top{
-        width: 100%;
-        margin-bottom: 50px;
+        width: 98%;
+        margin: 0 auto;
+        padding: 15px;
     }
     .search{
         width: 80%;

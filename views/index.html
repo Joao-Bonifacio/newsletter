@@ -5,54 +5,41 @@
         <div class="main_new">
             <div class="filter"></div>
             <div class="description">
-                <h2>The paradox created by eren</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro reiciendis pariatur eius assumenda consequuntur sit, non est aliquid.</p>
+                <a href="<%= posts[1].slug %>"><h2><%= posts[1].title %></h2></a>
+                <p><%- posts[1].content.substr(0,200) %>...</p>
             </div>
-            <img src="/public/img/eren.jpg" alt="eren">
+            <img src="<%= posts[1].image %>" alt="eren">
         </div>
     </main>
 
     <main class="more">
         <div class="new-content">
             <h1 class="center more-title">More News</h1>
-            <div class="more-container flex">
+            <div class="more-container">
     
                 <div class="last flex">
-                    <div class="last-single">
-                        <img src="/public/img/software.jfif" alt="...">
-                        <h3>Category</h3>
-                        <h2>Description</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste quasi optio eos? Fugiat libero aperiam eaque a dicta ad! Porro.</p>
-                    </div>
-                    <div class="last-single">
-                        <img src="/public/img/software.jfif" alt="...">
-                        <h3>Category</h3>
-                        <h2>Description</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste quasi optio eos? Fugiat libero aperiam eaque a dicta ad! Porro.</p>
-                    </div>
-                    <div class="last-single">
-                        <img src="/public/img/software.jfif" alt="software">
-                        <h3>Category</h3>
-                        <h2>Description</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste quasi optio eos? Fugiat libero aperiam eaque a dicta ad! Porro.</p>
-                    </div>
-                    <div class="last-single">
-                        <img src="/public/img/software.jfif" alt="software">
-                        <h3>Category</h3>
-                        <h2>Description</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni iste quasi optio eos? Fugiat libero aperiam eaque a dicta ad! Porro.</p>
-                    </div>
+                    <% for(let i = 1;posts.lenght;i++){ %>
+                        <div class="last-single">
+                            <img src="<%= posts[i].image %>" alt="<%= posts[i].title %>">
+                            <h3><%= posts[i].category %></h3>
+                            <h2><a href="<%= posts[0].slug %>"><%= posts[i].title %></a></h2>
+                            <p><%- posts[i].content.substr(0,100) %>...</p>
+                        </div>
+                    <% } %>
                 </div>
+
                 <div class="top">
                     <h3>More read</h3>
                     <div class="top-content">
-                        <div><img class="small" src="/public/img/small.jfif" alt="picture"><p>title<br>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                        <div><img class="small" src="/public/img/small.jfif" alt="picture"><p>title<br>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                        <div><img class="small" src="/public/img/small.jfif" alt="picture"><p>title<br>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                        <div><img class="small" src="/public/img/small.jfif" alt="picture"><p>title<br>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
-                        <div><img class="small" src="/public/img/small.jfif" alt="picture"><p>title<br>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>
+                        <% for(let i = 0;posts.lenght;i++){ %>
+                            <div>
+                                <img class="small" src="<%= posts[i].image %>" alt="picture">
+                                <p><%= posts[i].title %><br><%- posts[i].content.substr(0,100) %>...</p>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
