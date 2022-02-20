@@ -20,7 +20,7 @@ h1,h2,h3{
     color: #90BDDE;
     margin: 0;
 }
-a{text-decoration: none}
+a{text-decoration: none;color: #767880;}
 
 /*header...*/
 header{
@@ -162,6 +162,8 @@ header > div{
 .last-single > img{
     width: 100%;
     border-radius: 5px 5px 0 0;
+    max-height: 200px;
+    min-height: 100px;
 }
 .last-single h3{
     font-size: 15px;
@@ -182,7 +184,8 @@ header > div{
 }
 .small{
     display: inline-block;
-    width: 100px;
+    width: 130px;
+    height: 100px;
     margin: 0;
 }
 .top p{
@@ -258,6 +261,10 @@ header > div{
 }
 .new-img, .new-img img{
     width: 360px;
+    margin: 5px auto;
+}
+.single-letter, .single-letter > img{
+    max-width: 600px;
     margin: 5px auto;
 }
 @media screen and (max-width: 1000px) {

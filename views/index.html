@@ -18,25 +18,25 @@
             <div class="more-container">
     
                 <div class="last flex">
-                    <% for(let i = 1;posts.lenght;i++){ %>
+                    <% let i= 0;while(i < 4){ %>
                         <div class="last-single">
                             <img src="<%= posts[i].image %>" alt="<%= posts[i].title %>">
                             <h3><%= posts[i].category %></h3>
-                            <h2><a href="<%= posts[0].slug %>"><%= posts[i].title %></a></h2>
-                            <p><%- posts[i].content.substr(0,100) %>...</p>
+                            <h2><a href="<%= posts[i].slug %>"><%= posts[i].title %></a></h2>
+                            <p><%- posts[i].content.substr(0,200) %>...</p>
                         </div>
-                    <% } %>
+                    <% i++} %>
                 </div>
 
                 <div class="top">
                     <h3>More read</h3>
                     <div class="top-content">
-                        <% for(let i = 0;posts.lenght;i++){ %>
+                        <% let u=0;while(u<4){ %>
                             <div>
-                                <img class="small" src="<%= posts[i].image %>" alt="picture">
-                                <p><%= posts[i].title %><br><%- posts[i].content.substr(0,100) %>...</p>
+                                <img class="small" src="<%= posts[u].image %>" alt="<%= posts[u].title %>">
+                                <p><a href="<%= posts[u].slug %>" style="font-size:16px;"><%= posts[u].title %></a><br><%= posts[u].content.substr(0,100) %>...</p>
                             </div>
-                        <% } %>
+                        <% u++} %>
                     </div>
                 </div>
 

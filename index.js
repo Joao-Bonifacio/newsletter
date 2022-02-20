@@ -30,7 +30,10 @@ app.get('/', (req,res) => {
     }
 })
 app.get('/:slug', (req,res) => {
-    res.render('single',{})
+    Posts.findOneAndUpdate({slug:req.params.slug},{$inc:{views:1}},{new:true},(err,response)=>{
+        console.log(response)
+        res.render('single',{letter:response})
+    })
 })
 
 app.listen(3000,() => {
