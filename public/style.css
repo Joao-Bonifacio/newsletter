@@ -252,7 +252,7 @@ header > div{
 }
 .new-single > h2{
     padding: 45px 0;
-    color: #90BDDE;
+    font-size: 30px;
 }
 .new-single p{
     text-indent: 30px;
@@ -287,6 +287,39 @@ header > div{
 .ad > div{
     flex: 1;
 }
+/*pagina de busca*/
+.main-find{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #4C5A7F;
+}
+.main-find p{
+    color: white;
+}
+.find-content{
+    width: 60%;
+}
+.find-img{
+    width: 35%;
+    border-radius: 15px 0 0 15px;
+    background-color: #1b2241;
+}
+.find-img img{
+    max-width: 98%;
+    border-radius: 15px 0 0 15px;
+}
+.find-single{
+    padding: 2%;
+}
+.find-description{
+    width: 60%;
+    background-color: #1b2241;
+    border-radius: 0 15px 15px 0;
+}
+.count{
+    padding: 15px;
+    background-color: #2b3a44;
+}
 @media screen and (max-width: 1000px) {
     .last{
         width: 48%;
@@ -295,7 +328,7 @@ header > div{
     .top{
         width: 48%;
     }
-    .new{
+    .new,.main-find{
         display: block;
     }
     .new-single{

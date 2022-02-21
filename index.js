@@ -18,8 +18,8 @@ app.use('/public', express.static(path.join(__dirname , '/public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
-
-app.get('/', (req,res) => {
+app.get('/', (req,res)=>{res.redirect('/home')})
+app.get('/home', (req,res) => {
     if (req.query.search == null) {
         Posts.find({}).sort({'_id':-1}).exec((err,posts)=>{
             Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop)=>{
@@ -27,8 +27,21 @@ app.get('/', (req,res) => {
             })
         })
     }else{
-        Posts.find({title:{$regex:req.query.search,options:'i'}},(err,posts)=>{
-            res.render('search',{search:search,count:posts.lenght})
+        Posts.find({title: {$regex: req.query.search,$options:"i"}},(err,posts)=>{
+            posts = posts.map((val)=>{
+                return {
+                    title: val.title,
+                    image: val.image,
+                    category: val.category,
+                    content: val.content,
+                    slug: val.slug,
+                    author: val.author,
+                    views: val.views
+                }
+        })
+        Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop)=>{
+            res.render('search',{posts:posts,postsTop:postsTop,count:posts.length})
+        })
         })
     }
 })

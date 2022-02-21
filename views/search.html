@@ -1,19 +1,40 @@
 <%- include('src/header.html') %>
-<body>
-    <main class="new">
-        
-        <div class="new-single" style="display: block;">
-            <h2 class="center"><%- posts.title %></h2>
-            <div class="author">
-                <span><%- posts.author %></span>
-            </div>
-            <div class="single-letter"><img src="<%= letter.image%>" alt=""></div>
-                <p><%- posts.content %></p>
-                <div class="ad flex">
-                    <div>ADS</div>
-                    <div>ADS</div>
+<h2 class="count">Search: <%= count %> results</h2>
+<main class="main-find">
+    
+    <div class="find-content">
+        <div class="flex">
+            <% for(let i = 0; i < posts.length; i++) { %>
+            <div class="find-single flex">
+                <a class="find-img" href="<%= posts[i].slug %>">
+                    <div>
+                        <img src="<%= posts[i].image %>">
+                    </div>
+                </a>
+                <div class="find-description">
+                    <h4 style="font-size: 20px;margin-top:12px"><a href="<%= posts[i].slug %>"><%= posts[i].title %></a></h4>
+                    <p><%- posts[i].content.substr(0,200) %>...</p>
                 </div>
+            </div>
+            <% } %>
+            <div class="ad flex">
+                <div>for ads</div>
+                <div>for ads</div>
+            </div>
         </div>
+        </div>
+    </div>
+
+    <div class="top top-single">
+    <h3>More read</h3>
+    <div class="top-content">
+        <% let u=0;while(u<4){ %>
+            <div>
+                <img class="small" src="<%= postsTop[u].image %>" alt="<%= postsTop[u].title %>">
+                <p><a href="<%= postsTop[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= postsTop[u].title %></a><br><%= postsTop[u].content.substr(0,100) %>...</p>
+            </div>
+        <% u++} %>
+    </div>
+
 </main>
-</body>
 <%- include('src/footer.html') %>
