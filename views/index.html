@@ -12,7 +12,7 @@
         </div>
     </main>
 
-    <main class="more">
+    <section class="more">
         <div class="new-content">
             <h1 class="center more-title">More News</h1>
             <div class="more-container">
@@ -34,7 +34,7 @@
                         <% let u=0;while(u<4){ %>
                             <div>
                                 <img class="small" src="<%= posts[u].image %>" alt="<%= posts[u].title %>">
-                                <p><a href="<%= posts[u].slug %>" style="font-size:16px;"><%= posts[u].title %></a><br><%= posts[u].content.substr(0,100) %>...</p>
+                                <p><a href="<%= posts[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= posts[u].title %></a><br><%= posts[u].content.substr(0,100) %>...</p>
                             </div>
                         <% u++} %>
                     </div>
@@ -42,6 +42,6 @@
 
             </div>
         </div>
-    </main>
+    </section>
 </body>
 <%- include('src/footer.html') %>
