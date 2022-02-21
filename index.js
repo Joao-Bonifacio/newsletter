@@ -18,8 +18,8 @@ app.use('/public', express.static(path.join(__dirname , '/public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
-app.get('/', (req,res)=>{res.redirect('/home')})
-app.get('/home', (req,res) => {
+//app.get('/', (req,res)=>{res.redirect('/home')})
+app.get('/', (req,res) => {
     if (req.query.search == null) {
         Posts.find({}).sort({'_id':-1}).exec((err,posts)=>{
             Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop)=>{
