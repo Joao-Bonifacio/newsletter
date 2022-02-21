@@ -1,0 +1,19 @@
+<%- include('src/header.html') %>
+<body>
+    <main class="new">
+        
+        <div class="new-single" style="display: block;">
+            <h2 class="center"><%- posts.title %></h2>
+            <div class="author">
+                <span><%- posts.author %></span>
+            </div>
+            <div class="single-letter"><img src="<%= letter.image%>" alt=""></div>
+                <p><%- posts.content %></p>
+                <div class="ad flex">
+                    <div>ADS</div>
+                    <div>ADS</div>
+                </div>
+        </div>
+</main>
+</body>
+<%- include('src/footer.html') %>

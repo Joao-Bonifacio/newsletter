@@ -19,8 +19,8 @@
                 <div class="top-content">
                     <% let u=0;while(u<4){ %>
                         <div>
-                            <img class="small" src="<%= posts[u].image %>" alt="<%= posts[u].title %>">
-                            <p><a href="<%= posts[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= posts[u].title %></a><br><%= posts[u].content.substr(0,100) %>...</p>
+                            <img class="small" src="<%= postsTop[u].image %>" alt="<%= postsTop[u].title %>">
+                            <p><a href="<%= postsTop[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= postsTop[u].title %></a><br><%= postsTop[u].content.substr(0,100) %>...</p>
                         </div>
                     <% u++} %>
                 </div>

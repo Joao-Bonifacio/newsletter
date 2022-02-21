@@ -20,23 +20,39 @@ app.use(express.urlencoded({ extended: false}))
 
 
 app.get('/', (req,res) => {
-    if (req.query.seach == null) {
-        Posts.find({}).sort({'_id':-1}).exec((err,posts)=>{ //o -1 no sort = ordem decrescente
-            res.render('index',{posts:posts})
+    if (req.query.search == null) {
+        Posts.find({}).sort({'_id':-1}).exec((err,posts)=>{
+            Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop)=>{
+                res.render('index',{posts:posts,postsTop:postsTop})
+            })
         })
     }else{
-        res.send('Você pesquisou: '+req.query.search) //futuramente buscar no banco de dados
+        Posts.find({title:{$regex:req.query.search,options:'i'}},(err,posts)=>{
+            res.render('search',{search:search,count:posts.lenght})
+        })
     }
 })
-app.get('/category', (req,res) => {
-    res.render('category',{})
-})
+app.get('/category', (req,res) => {res.render('category')})
+app.get('/today', (req,res)=>{res.render('today')})
+app.get('/contact', (req,res) => {res.render('contact')})
+
 app.get('/:slug', (req,res) => {
-    Posts.findOneAndUpdate({slug:req.params.slug},{$inc:{views:1}},{new:true},(err,response)=>{
-        Posts.find({}).sort({'_id':-1}).exec((err,posts)=>{
-            res.render('single',{letter:response,posts:posts})
-        })  
-    })
+        Posts.findOneAndUpdate({slug:req.params.slug},{$inc:{views:1}},{new:true},(err,response)=>{
+            if (response != null) {
+                Posts.find({}).sort({'_id':-1}).exec((err,posts)=>{
+                    Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop)=>{
+                        res.render('single',{letter:response,posts:posts,postsTop:postsTop})
+                    })   
+                }) 
+            }else{
+                /*res.render('404')
+                setTimeout(() => {
+                    res.redirect('/')
+                },1000)
+                */
+                res.redirect('/')
+            }
+        })
 })
 
 app.listen(3000,() => {
