@@ -1,4 +1,0 @@
-# rascunho to_do list
-add menu mobile
-add /node_modules no git-ignore
-add as outras paginas do menu
