@@ -19,7 +19,6 @@ app.use('/public', express.static(path.join(__dirname , '/public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
-//app.get('/', (req,res)=>{res.redirect('/home')})
 app.get('/', (req,res) => {
     if (req.query.search == null) {
         Posts.find({}).sort({'_id':-1}).exec((err,posts)=>{
@@ -47,20 +46,13 @@ app.get('/', (req,res) => {
     }
 })
 app.get('/category', (req,res) => {
-    
-
     Categorys.find({},(err,categorys)=>{
-        categorys = categorys.map((val)=>{
-            return {
-                cat: val.cat
-            }
+        categorys = categorys.map((val)=>{return {categ: val.cat}})
+        Categorys.find({}).sort({'cat':-1}).exec((err,categ)=>{
+            res.render('category',{categ:categ})
         })
-        res.render('category',{categorys:categorys})
-
     })
-
-
-
+    //mostrar notícias por categoria
 })
 app.get('/today', (req,res)=>{res.render('today')})
 app.get('/contact', (req,res) => {res.render('contact')})

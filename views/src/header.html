@@ -26,6 +26,12 @@
     const pages = document.querySelectorAll('.pages > div')
     var dir = location.pathname
     switch (dir) {
+        case '/':
+            pages[0].classList.add('now')
+            pages[1].classList.remove('now')
+            pages[2].classList.remove('now')
+            pages[3].classList.remove('now')
+            break
         case '/category':
             pages[0].classList.remove('now')
             pages[1].classList.add('now')
@@ -45,10 +51,9 @@
             pages[3].classList.add('now')
             break
         default:
-            pages[0].classList.add('now')
+            pages[0].classList.remove('now')
             pages[1].classList.remove('now')
             pages[2].classList.remove('now')
             pages[3].classList.remove('now')
-            break;
     }
 </script>
