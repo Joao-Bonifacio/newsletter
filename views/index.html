@@ -34,7 +34,7 @@
                         <% let u=0;while(u<4){ %>
                             <div>
                                 <img class="small" src="<%= postsTop[u].image %>" alt="<%= postsTop[u].title %>">
-                                <p><a href="<%= postsTop[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= postsTop[u].title %></a><br><%= postsTop[u].content.substr(0,100) %>...</p>
+                                <p><a href="<%= postsTop[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= postsTop[u].title %></a><br><span style="color: gray;"><%= postsTop[u].category %></span><br><%= postsTop[u].content.substr(0,100) %>...</p>
                             </div>
                         <% u++} %>
                     </div>

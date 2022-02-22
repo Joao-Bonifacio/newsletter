@@ -13,7 +13,7 @@
                 </a>
                 <div class="find-description">
                     <h4 style="font-size: 20px;margin-top:12px"><a href="<%= posts[i].slug %>"><%= posts[i].title %></a></h4>
-                    <p><%- posts[i].content.substr(0,200) %>...</p>
+                    <p><span style="color: gray;"><%= posts[i].category %></span><br><%- posts[i].content.substr(0,200) %>...</p>
                 </div>
             </div>
             <% } %>
@@ -31,7 +31,7 @@
         <% let u=0;while(u<4){ %>
             <div>
                 <img class="small" src="<%= postsTop[u].image %>" alt="<%= postsTop[u].title %>">
-                <p><a href="<%= postsTop[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= postsTop[u].title %></a><br><%= postsTop[u].content.substr(0,100) %>...</p>
+                <p><a href="<%= postsTop[u].slug %>" style="font-weight: bold;font-size: 18px;color: rgb(78, 146, 209);"><%= postsTop[u].title %></a><br><span style="color: gray;"><%= postsTop[u].category %></span><br><%= postsTop[u].content.substr(0,100) %>...</p>
             </div>
         <% u++} %>
     </div>

@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
 const db = require('mongoose')
-const Posts = require('./posts.js')
+const Posts = require('./posts')
+const Categorys = require('./categorys')
 
 const app = express()
 db.connect('mongodb+srv://root:Jhowmastter12@jdb.zbken.mongodb.net/news_db?retryWrites=true&w=majority',
@@ -38,14 +39,29 @@ app.get('/', (req,res) => {
                     author: val.author,
                     views: val.views
                 }
-        })
-        Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop)=>{
-            res.render('search',{posts:posts,postsTop:postsTop,count:posts.length})
-        })
+            })
+            Posts.find({}).sort({'views': -1}).limit(4).exec((err,postsTop)=>{
+                res.render('search',{posts:posts,postsTop:postsTop,count:posts.length})
+            })
         })
     }
 })
-app.get('/category', (req,res) => {res.render('category')})
+app.get('/category', (req,res) => {
+    
+
+    Categorys.find({},(err,categorys)=>{
+        categorys = categorys.map((val)=>{
+            return {
+                cat: val.cat
+            }
+        })
+        res.render('category',{categorys:categorys})
+
+    })
+
+
+
+})
 app.get('/today', (req,res)=>{res.render('today')})
 app.get('/contact', (req,res) => {res.render('contact')})
 
@@ -58,11 +74,6 @@ app.get('/:slug', (req,res) => {
                     })   
                 }) 
             }else{
-                /*res.render('404')
-                setTimeout(() => {
-                    res.redirect('/')
-                },1000)
-                */
                 res.redirect('/')
             }
         })
