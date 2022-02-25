@@ -45,18 +45,8 @@ app.get('/', (req,res) => {
         })
     }
 })
-app.get('/category', (req,res) => {
-    Categorys.find({},(err,categorys)=>{
-        categorys = categorys.map((val)=>{return {categ: val.cat}})
-        Categorys.find({}).sort({'cat':-1}).exec((err,categ)=>{
-            res.render('category',{categ:categ})
-        })
-    })
-    //mostrar notícias por categoria
-})
-app.get('/today', (req,res)=>{res.render('today')})
+app.get('/about', (req,res) => {res.redirect('https://joao-bonifacio.github.io/Portifolio/')})
 app.get('/contact', (req,res) => {res.render('contact')})
-
 app.get('/:slug', (req,res) => {
         Posts.findOneAndUpdate({slug:req.params.slug},{$inc:{views:1}},{new:true},(err,response)=>{
             if (response != null) {
