@@ -320,6 +320,34 @@ header > div{
     padding: 15px;
     background-color: #2b3a44;
 }
+/*pagina de contato*/
+.contact{
+    padding: 20px;
+}
+.contact i{
+    font-size: 25px;
+}
+.contact a{
+    color: white;
+}
+.contact p{
+    background-color: gray;
+    padding: 15px;
+    width: 300px;
+    border-radius: 15px;
+}
+/*menu mobile*/
+.mobile{position: relative;}
+.mobile-itens{
+    transition: 1s;
+    width: 120px;
+    height: 150px;
+    background-color: #445561a8;
+    position: absolute;
+}
+.mobile-itens > div{
+    padding: 8px 5px;
+}
 @media screen and (max-width: 1000px) {
     .last{
         width: 48%;
