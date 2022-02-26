@@ -5,8 +5,8 @@ const Posts = require('./posts')
 const Categorys = require('./categorys')
 
 const app = express()
-//trocar os (***) por usuário e senha respectivamente
-db.connect('mongodb+srv://***:***@jdb.zbken.mongodb.net/news_db?retryWrites=true&w=majority',
+//substituir o *** pelo token de autenticação do seu banco de dados em mongodb
+db.connect('***',
 {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
     console.log('db connected...')
 }).catch((err)=>{
