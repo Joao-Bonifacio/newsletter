@@ -5,7 +5,8 @@ const Posts = require('./posts')
 const Categorys = require('./categorys')
 
 const app = express()
-db.connect('mongodb+srv://root:Jhowmastter12@jdb.zbken.mongodb.net/news_db?retryWrites=true&w=majority',
+//trocar os (***) por usuário e senha respectivamente
+db.connect('mongodb+srv://***:***@jdb.zbken.mongodb.net/news_db?retryWrites=true&w=majority',
 {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
     console.log('db connected...')
 }).catch((err)=>{
